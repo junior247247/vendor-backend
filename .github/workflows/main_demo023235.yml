@@ -24,7 +24,6 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm start
           npm run build --if-present
           npm run test --if-present
 
@@ -53,5 +52,5 @@ jobs:
         with:
           app-name: 'demo023235'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D1DD3598CDD34FC59E5ACB78CE58E300 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_330C6914339140868934F0CFD0D24FD3 }}
           package: .
