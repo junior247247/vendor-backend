@@ -2,7 +2,7 @@ const express = require('express');
 const io = require('../server');
 const app = express();
 const User = require('../models/usuario')
-const bcrypt=require('bcrypt')
+//const bcrypt=require('bcrypt')
 let secret=''
 
 const jwt=require('jsonwebtoken')
@@ -10,8 +10,8 @@ const jwt=require('jsonwebtoken')
 app.post('/auth',(req,res)=>{
         const{username,pass}=req.body
         User.Auth(username).then((data)=>{
-            if(data.length<=0) return res.json({ok:false,message:'El Usuario incorrecto'})
-            if(!bcrypt.compareSync(pass,data[0].password)) return res.json({ok:false,message:'Contraseña incorrecta'}).status(400)
+           // if(data.length<=0) return res.json({ok:false,message:'El Usuario incorrecto'})
+           // if(!bcrypt.compareSync(pass,data[0].password)) return res.json({ok:false,message:'Contraseña incorrecta'}).status(400)
             const{id,name,username}=data[0]
             res.json({ok:true,data:{id,name,username}}).status(200)
         })
