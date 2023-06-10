@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - VENDORBACKEND
+name: Build and deploy Node.js app to Azure Web App - demo023235
 
 on:
   push:
@@ -23,8 +23,8 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm start
           npm install
+          npm start
           npm run build --if-present
           npm run test --if-present
 
@@ -32,7 +32,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          
           path: .
 
   deploy:
@@ -47,12 +46,12 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
-  
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'VENDORBACKEND'
+          app-name: 'demo023235'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3047BFD91AA644A4A86BF52D03533BBD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D1DD3598CDD34FC59E5ACB78CE58E300 }}
           package: .
