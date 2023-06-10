@@ -20,7 +20,7 @@ const io=new Server(server,{cors:{methods:['POST','GET']}})
 //onst io = SocketIo(server);
 
 module.exports=io;
-app.use(require('./controllers/Stock'))
+app.use(require('./controllers/stock'))
 app.use(require('./controllers/products'))
 app.use(require('./controllers/usuarios'))
 app.use(require('./controllers/munucipe'))
